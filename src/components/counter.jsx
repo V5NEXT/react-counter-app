@@ -18,7 +18,7 @@ class Counter extends Component {
             <span className={this.changeBadgeColor()}>{this.formatCount()}</span>
             <button onClick={ () => this.handleIncriment(this.state.product)} className='btn btn-primary btn-sm'>Incriment</button>
             {this.state.tags.length === 0 && "Please add tags!"}
-            {this.renderTags()}
+            {/* {this.renderTags()} */}
         </React.Fragment>);
     
     }
