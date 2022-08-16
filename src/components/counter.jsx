@@ -3,23 +3,21 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
-        count : this.props.value,
+        count : this.props.counter.value,
         product : 1,
         tags : ['tag1', 'tag2', 'tag3']
      } 
-     handleIncriment = (product) =>{
-        console.log("Product", product);
+     handleIncriment = () =>{
         this.setState({
             count : this.state.count + 1
         })
      }
     render() { 
         return (<div>
-            <h4>Counter {this.props.id}</h4>
+            <h4>Counter {this.props.counter.id}</h4>
             <span className={this.changeBadgeColor()}>{this.formatCount()}</span>
-            <button onClick={ () => this.handleIncriment(this.state.product)} className='btn btn-primary btn-sm'>Incriment</button>
-            {this.state.tags.length === 0 && "Please add tags!"}
-            {/* {this.renderTags()} */}
+            <button onClick={ () => this.handleIncriment()} className='btn btn-primary btn-sm'>Incriment</button>
+            <button onClick={ ()=> this.props.onDelete(this.props.counter.id)} className='btn m-2 btn-sm btn-danger'>Delete</button>
         </div>);
     
     }
