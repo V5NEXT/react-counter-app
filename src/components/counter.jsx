@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
-        count : 0,
+        count : this.props.value,
         product : 1,
         tags : ['tag1', 'tag2', 'tag3']
      } 
@@ -14,12 +14,13 @@ class Counter extends Component {
         })
      }
     render() { 
-        return (<React.Fragment>
+        return (<div>
+            <h4>Counter {this.props.id}</h4>
             <span className={this.changeBadgeColor()}>{this.formatCount()}</span>
             <button onClick={ () => this.handleIncriment(this.state.product)} className='btn btn-primary btn-sm'>Incriment</button>
             {this.state.tags.length === 0 && "Please add tags!"}
             {/* {this.renderTags()} */}
-        </React.Fragment>);
+        </div>);
     
     }
     renderTags(){
