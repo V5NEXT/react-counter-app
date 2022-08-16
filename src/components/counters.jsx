@@ -5,7 +5,7 @@ import Counter from './counter';
 class Counters extends Component {
     state = { 
         counters : [
-            {id : 1, value : 1},
+            {id : 1, value : 0},
             {id : 2, value : 0},
             {id : 3, value : 0},
             {id : 4, value : 0}
@@ -21,6 +21,14 @@ class Counters extends Component {
         counters[index].value ++;
         this.setState({counters});
      }
+    handleReset = ()=>{
+       const counters = this.state.counters.map(c =>{
+        c.value = 0;
+        return c
+       }) 
+       this.setState(counters)
+    }
+
     
      handleDelte = (counterId) =>{
         const counters = this.state.counters.filter(c => c.id !== counterId)
@@ -30,6 +38,7 @@ class Counters extends Component {
     render() { 
         return (
             <div>
+            <button onClick={this.handleReset} className='btn btn-sm btn-secondary'>Reset</button>
               {this.state.counters.map((counter)=> <Counter key={counter.id}
               onAddition={this.handleAddition} onDelete={this.handleDelte} 
               counter={counter}> 
