@@ -2,10 +2,15 @@
 const NavBar = (props) =>{
 return (
 
-    <nav className="navbar bg-light">
+    <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
             <a className="navbar-brand" href="#">Navbar</a>
-            <span>{props.totalCount}</span>
+            <button type="button" class="btn btn-warning position-relative" disabled>
+            Cart
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {props.totalCount}
+            </span>
+            </button>
         </div>
     </nav>
     );
@@ -13,3 +18,6 @@ return (
 
  
 export default NavBar;
+
+
+
