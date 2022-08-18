@@ -10,12 +10,16 @@ class App extends Component {
         {id : 2, value : 0},
         {id : 3, value : 0},
         {id : 4, value : 0}
-
-      ]
+      ],
+     counterDuplicate : [
+      {id : 1, value : 0},
+      {id : 2, value : 0},
+      {id : 3, value : 0},
+      {id : 4, value : 0}
+     ] 
   } 
 
   handleAddition = (counter)=>{
-      console.log(counter)
       const counters = [...this.state.counters];
       const index = counters.indexOf(counter);
       counters[index] = {...counter};

@@ -9,11 +9,20 @@ class Counter extends Component {
      } 
 
     render() { 
-        return (<div>
-            <h4>Counter {this.props.counter.value}</h4>
-            <span className={this.changeBadgeColor()}>{this.formatCount()}</span>
-            <button onClick={ () => this.props.onAddition(this.props.counter)} className='btn btn-primary btn-sm'>Incriment</button>
-            <button onClick={ ()=> this.props.onDelete(this.props.counter.id)} className='btn m-2 btn-sm btn-danger'>Delete</button>
+        return (<div className="card">
+
+
+                <div className="card-header">
+                Counter               </div>
+                <div className="card-body">
+                    <h5 className="card-title">{this.props.counter.value}  </h5>
+                    <span className={this.changeBadgeColor()}>{this.formatCount()}</span>
+                    <button onClick={ () => this.props.onAddition(this.props.counter)} className='btn btn-primary btn-sm'>Incriment</button>
+            <button onClick={ ()=> this.props.onDelete(this.props.counter.id)} className='btn m-2 btn-sm btn-danger'>Delete</button>                </div>
+
+
+
+      
         </div>);
     
     }
