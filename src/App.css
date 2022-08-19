@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.counters_main_div{
+  max-height: 100vh;
+    overflow: auto;
+}
